@@ -11,17 +11,15 @@ const TimerPage = () => {
   const remainTime = jihawiDate - now;
 
   return (
-    <main className="h-full flex flex-col justify-center items-center">
-      <header
-        className={`${tajawal.className} text-3xl items-center flex flex-col`}
-      >
+    <main className="h-full flex flex-col justify-center text-center px-4">
+      <header className={`${tajawal.className} text-3xl flex flex-col`}>
         <span className={`${nunito.className}`}>Time remaing to JIHAWI</span>
         <span>الوقت المتبقي للجهوي</span>
       </header>
       <p
         className={`mt-5 text-3xl font-semibold text-green-400 ${nunito.className}`}
       >
-        {hd(remainTime, { units: ["w", "d", "h"], round: true })} (
+        - {hd(remainTime, { units: ["w", "d", "h"], round: true })} (
         {hd(remainTime, { units: ["d"], round: true })})
       </p>
     </main>
