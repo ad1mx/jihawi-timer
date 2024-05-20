@@ -11,7 +11,7 @@ const TimerPage = () => {
   const remainTime = jihawiDate.getTime() - Date.now();
 
   return (
-    <main className="h-full flex flex-col justify-center px-4 items-center">
+    <main className="h-full flex flex-col justify-center px-4 items-center text-center">
       <header className={`${tajawal.className} text-3xl flex flex-col`}>
         <span className={`${nunito.className}`}>Time remaing to JIHAWI</span>
         <span>الوقت المتبقي للجهوي</span>
