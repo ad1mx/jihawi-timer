@@ -26,7 +26,7 @@ const TimerPage = () => {
       {/* AR */}
       <p
         dir="rtl"
-        className={`mt-2 text-3xl font-semibold text-green-400 ${nunito.className}`}
+        className={`mt-2 text-3xl font-semibold text-green-400 ${tajawal.className}`}
       >
         {hd(remainTime, {
           units: ["w", "d", "h"],
