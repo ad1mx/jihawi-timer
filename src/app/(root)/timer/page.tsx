@@ -17,16 +17,16 @@ const TimerPage = () => {
         <span>الوقت المتبقي للجهوي</span>
       </header>
       {/* EN */}
-      <div className="mt-8 flex text-green-400">
-        <AiFillClockCircle className="text-4xl text-green-300" />
+      <div className="mt-8 hidden text-green-400">
+        {/* <AiFillClockCircle className="text-4xl text-green-300" /> */}
         <p className={`ml-2 text-3xl font-semibold ${nunito.className}`}>
           {hd(remainTime, { units: ["w", "d", "h"], round: true })} (
           {hd(remainTime, { units: ["d"], round: true })})
         </p>
       </div>
       {/* AR */}
-      <div dir="rtl" className="mt-2 flex text-green-400">
-        <AiFillClockCircle className="text-4xl text-green-300" />
+      <div dir="rtl" className="mt-8 flex text-green-400">
+        {/* <AiFillClockCircle className="text-4xl text-green-300" /> */}
         <p
           className={`mr-2 text-3xl font-semibold text-green-400 ${tajawal.className}`}
         >
@@ -70,9 +70,9 @@ const TimerPage = () => {
       </div>
       {/* DATE */}
       <div className="mt-8 flex">
-        <AiFillCalendar className="text-4xl text-blue-300" />
+        {/* <AiFillCalendar className="text-4xl text-blue-300" /> */}
         <p
-          className={`ml-2 text-3xl font-semibold text-blue-400 ${tajawal.className}`}
+          className={`text-3xl font-semibold text-blue-400 ${tajawal.className}`}
         >
           {jihawiDate.toLocaleDateString("ar", {
             dateStyle: "full",
