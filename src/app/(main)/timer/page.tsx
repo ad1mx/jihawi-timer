@@ -50,7 +50,6 @@ const TimerPage = () => {
         <span>الوقت المتبقي للجهوي</span>
       </header>
 
-      {/* AR */}
       <div dir="rtl" className="mt-8 flex text-green-400">
         <p
           className={`mr-2 text-3xl font-semibold text-green-400 ${tajawal.className}`}
@@ -58,7 +57,7 @@ const TimerPage = () => {
           {remaingTineString ?? "..Loading remaing time"}
         </p>
       </div>
-      {/* DATE */}
+
       <div className="mt-8 flex">
         <p
           className={`text-3xl font-semibold text-blue-400 ${tajawal.className}`}
