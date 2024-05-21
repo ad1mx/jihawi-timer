@@ -17,9 +17,9 @@ const TimerPage = () => {
 
   useEffect(() => {
     setDate(
-      jihawiDate.toLocaleDateString("ar", {
+      `${jihawiDate.toLocaleDateString("ar", {
         dateStyle: "full",
-      })
+      })} - ${jihawiDate.toLocaleTimeString(undefined, { hour12: false })}`
     );
 
     // Update time
@@ -58,11 +58,11 @@ const TimerPage = () => {
         </p>
       </div>
 
-      <div className="mt-8 flex">
+      <div className="mt-8 flex" dir="rtl">
         <p
           className={`text-3xl font-semibold text-blue-400 ${tajawal.className}`}
         >
-          {date ?? "Loading date.."}
+          {date ?? "..Loading date"}
         </p>
       </div>
     </main>
