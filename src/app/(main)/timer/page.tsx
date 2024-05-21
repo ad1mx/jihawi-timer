@@ -22,16 +22,14 @@ const TimerPage = () => {
       })} - ${jihawiDate.toLocaleTimeString(undefined, { hour12: false })}`
     );
 
-    // Update time
-
     const textOptions = {
-      units: ["w", "d", "h", "m", "s"],
+      units: ["w", "d", "h", "m"],
       language: "ar",
       digitReplacements: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
       round: true,
     } satisfies Options;
 
-    setInterval(() => {
+    const timeout = setInterval(() => {
       const remaingTime = jihawiDate.getTime() - Date.now();
 
       const upText = `${hd(remaingTime, textOptions)} (${hd(remaingTime, {
@@ -41,6 +39,8 @@ const TimerPage = () => {
 
       setRemaingTineString(upText);
     }, 1000);
+
+    return () => clearInterval(timeout);
   });
 
   return (
