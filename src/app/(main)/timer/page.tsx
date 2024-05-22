@@ -15,6 +15,24 @@ const TimerPage = () => {
   >();
   const [date, setDate] = useState<string | undefined>();
 
+  const textOptions = {
+    units: ["w", "d", "h", "m"],
+    language: "ar",
+    digitReplacements: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
+    round: true,
+  } satisfies Options;
+
+  const updateTime = () => {
+    const remaingTime = jihawiDate.getTime() - Date.now();
+
+    const upText = `${hd(remaingTime, textOptions)} (${hd(remaingTime, {
+      ...textOptions,
+      units: ["d"],
+    })})`;
+
+    setRemaingTineString(upText);
+  };
+
   useEffect(() => {
     setDate(
       `${jihawiDate.toLocaleDateString("ar", {
@@ -22,23 +40,9 @@ const TimerPage = () => {
       })} - ${jihawiDate.toLocaleTimeString(undefined, { hour12: false })}`
     );
 
-    const textOptions = {
-      units: ["w", "d", "h", "m"],
-      language: "ar",
-      digitReplacements: ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"],
-      round: true,
-    } satisfies Options;
+    updateTime();
 
-    const timeout = setInterval(() => {
-      const remaingTime = jihawiDate.getTime() - Date.now();
-
-      const upText = `${hd(remaingTime, textOptions)} (${hd(remaingTime, {
-        ...textOptions,
-        units: ["d"],
-      })})`;
-
-      setRemaingTineString(upText);
-    }, 1000);
+    const timeout = setInterval(updateTime, 1000);
 
     return () => clearInterval(timeout);
   });
