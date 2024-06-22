@@ -8,7 +8,7 @@ const tajawal = Tajawal({ weight: ["700"], subsets: ["arabic"] });
 const nunito = Nunito({ weight: ["700"], subsets: ["latin"] });
 
 const TimerPage = () => {
-  const jihawiDate = new Date(2024, 7 - 1, 30, 22, 0, 0);
+  const jihawiDate = new Date("2024-06-30T22:00:00");
 
   const [remaingTineString, setRemaingTineString] = useState<
     string | undefined
